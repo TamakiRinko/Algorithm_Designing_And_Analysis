@@ -29,7 +29,7 @@ struct Adj{
     }
 };
 
-int time = 0;
+int time1 = 0;
 int n;
 Node* node;
 Adj** AdjVertices;
@@ -80,7 +80,7 @@ int main(){
     for(int i = 0; i < n; ++i){
         node[i].color = White;
     }
-    time = 0;
+    time1 = 0;
     wrapper_edge();
     return 0;
 }
@@ -114,8 +114,8 @@ void wrapper_edge(){
 
 void DFS_point(int v){
     node[v].color = Gray;
-    time += 1;
-    node[v].disT = time;
+    time1 += 1;
+    node[v].disT = time1;
     node[v].back = node[v].disT;
     Adj* cur = AdjVertices[v];
     int w;
@@ -141,13 +141,13 @@ void DFS_point(int v){
         root_tree = root_trees;
     }
     node[v].color = Black;
-    time += 1;
+    time1 += 1;
 }
 
 void DFS_edge(int v){
     node[v].color = Gray;
-    time += 1;
-    node[v].disT = time;
+    time1 += 1;
+    node[v].disT = time1;
     node[v].back = node[v].disT;
     Adj* cur = AdjVertices[v];
     int w;
@@ -173,5 +173,5 @@ void DFS_edge(int v){
         }
     }
     node[v].color = Black;
-    time += 1;
+    time1 += 1;
 }
